@@ -1,16 +1,15 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
-    namespace = "com.ns.architructureapplication"
+    namespace = "com.android.mvi"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.ns.architructureapplication"
-        minSdk = 28
+        applicationId = "com.android.mvi"
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -39,9 +38,6 @@ android {
 dependencies {
     // Dependency on a local library module
     implementation(project(":utils"))
-
-    val nav_version = "2.7.4"
-
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
@@ -49,9 +45,4 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
-
-
 }

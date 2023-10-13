@@ -15,4 +15,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "ArchitructureApplication"
 include(":app")
- 
+include(":mvi")
+include(":mvvm")
+include(":cleanarc")
+include(":utils")
