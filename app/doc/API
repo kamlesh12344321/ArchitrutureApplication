@@ -1,0 +1,54 @@
+Model-
+ Other than representing the data and the business logic of the application model maintains a state which can be changed through actions of user.
+
+View-
+ Represents the UI layer of the application which consists of Activities and Fragments.It accepts different model states and display it as a UI.
+
+Intent-
+ Again, do not confuse it with the Android Intent, it’s the intention to perform an action either by the user or the app itself.
+
+ MVI Workflow
+User interaction happen which will be an Intent →
+Intent is a state which is an input to model →
+Model stores state and send the requested state to the View →
+View Loads the state from Model →
+ Updated UI is displayed to the user.
+
+
+
+ Dependencies::::
+
+     //Coroutine
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6"
+     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.6"
+
+
+
+     DIR structure::::
+
+     data:
+        -api::
+         -ApiHelper(interface)
+         -ApiHelperImpl(class) with constructor(apiService: ApiService)
+         -ApiService(interface)
+         -RetrofitBuilder(class)
+        -model:
+            -data(Model class kotlin class)
+        -repository::
+            -MainRepository(interface) constructor (apiHelper: ApiHelper)
+     UIs:
+        -adapter::
+            -MainAdapter(Recyclerview adapter)
+        -intent::
+            -DataIntent(sealed class)
+        -view::
+            -MainActivity
+        -viewModel::
+            -DataViewModel constructor(mainRepository: MainRepository) extends ViewModel
+        -viewState::
+            -DataState(sealed class)( object Inactive : DataState()
+                                         object Loading : DataState()
+                                         data class ResponseData(val data: Data) : DataState()
+                                         data class Error(val error: String?) : DataState())
+
+
