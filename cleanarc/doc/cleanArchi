@@ -1,0 +1,60 @@
+Presentation layer:::
+
+This layer contains the user interface (UI) elements, such as activities, fragments, and view models.
+It also contains the business logic that is used to interact with the user.
+The presentation layer depends on the domain layer and uses its entities and use cases.
+
+Domain layer:::
+This layer contains the core business logic of the application. It does not depend on any other layers, and it can be used in other applications.
+The domain layer defines the entities and the use cases that are used by the presentation layer.
+
+
+Data layer:::
+This layer contains the data access logic.
+It is responsible for retrieving and storing data.
+The data layer uses repositories to retrieve data from multiple data sources, such as a database or web service.
+
+
+
+Presentation Layer classes are:
+1. Activity
+2. Fragment
+3. View Model
+4. View
+5. Presenter
+6. Adapter
+7. Custom View
+8. Dialog
+9. Service
+10. BroadcastReceiver
+11. ContentProvider
+12. Notification
+13. Intent
+14. IntentFilter
+23. ServiceConnection
+
+Domain Layer classes are:
+1. Entity
+2. Use Case
+3. Repository Interface
+4. Domain Event
+5. Domain Exception
+6. Domain Service
+7. Domain Factory
+8. Domain Repository
+9. Domain Model
+10. Domain Interface
+11. Domain Mapper
+12. Domain Object
+
+Data Layer classes are:
+1. Repository Implementation
+2. Data Mapper
+3. Data Transfer Object
+4. Data Access Object
+5. Data Model
+6. Data Interface
+7. Data Exception
+8. Data Service
+10. Data Repository implementation(Data Factory)
+
